@@ -1,36 +1,38 @@
 #include <stdio.h>
 
-int main(void)
+int main()
 {
-	int num1, num2, num3, result;
-	scanf("%d %d %d", &num1, &num2, &num3);
-
-	if (num1 == num2 && num2 == num3)
+	int a, b, c;
+	int money = 0;
+	scanf("%d %d %d", &a, &b, &c);
+	
+	if (a == b && b == c)
 	{
-		result = 10000 + num1 * 1000;
+		money = 10000 + a * 1000;
 	}
-	else if (num1 == num2 || num1 == num3)
+	else if (a == b || a == c)
 	{
-		result = 1000 + num1 * 100;
+		money = 1000 + a * 100;
 	}
-	else if (num2 == num3)
+	else if (b == c)
 	{
-		result = 1000 + num2 * 100;
+		money = 1000 + b * 100;
 	}
-	else if (num1 > num2 && num1 > num3)
+	else
 	{
-		result = 100 * num1;
+		if (a > b && a > c)
+		{
+			money = a * 100;
+		}
+		else if (b > a && b > c)
+		{
+			money = b * 100;
+		}
+		else if (c > a && c > b)
+		{
+			money = c * 100;
+		}
 	}
-	else if (num2 > num1 && num2 > num3)
-	{
-		result = 100 * num2;
-	}
-	else if (num3 > num1 && num3 > num2)
-	{
-		result = 100 * num3;
-	}
-
-	printf("%d", result);
-
+	printf("%d", money);
 	return 0;
 }
