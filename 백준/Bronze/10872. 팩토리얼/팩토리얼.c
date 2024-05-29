@@ -1,17 +1,15 @@
 #include <stdio.h>
 
-int factorial(int N)
-{
-    if (N <= 1) return 1;
-    return N * factorial(N - 1);
-}
-
 int main()
 {
-    int N;
+    int N, result = 1;
     scanf("%d", &N);
-    
-    printf("%d\n", factorial(N));
+
+    for (int i = 1; i <= N; i++)
+    {
+        result *= i;
+    }
+    printf("%d", result);
     
     return 0;
 }
